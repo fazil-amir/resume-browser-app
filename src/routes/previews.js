@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addPreview, getLastPreviews } from "../services/previewService.js";
+import { addPreview, getLastPreviews } from "../services/preview-service.js";
 
 const router = Router();
 

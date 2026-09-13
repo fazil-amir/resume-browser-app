@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getFolders } from "../services/fileService.js";
+import { getFolders } from "../services/file-service.js";
 
 const router = Router();
 

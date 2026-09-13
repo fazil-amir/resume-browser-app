@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { getAllResumes, getResumes, deleteResume } from "../services/fileService.js";
-import { removeFromFavorites } from "../services/favoriteService.js";
-import { removeFromPreviews } from "../services/previewService.js";
+import { getAllResumes, getResumes, deleteResume } from "../services/file-service.js";
+import { removeFromFavorites } from "../services/favorite-service.js";
+import { removeFromPreviews } from "../services/preview-service.js";
 
 const router = Router();
 

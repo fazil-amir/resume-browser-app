@@ -45,7 +45,7 @@ export default function ResumePreviewModal({
         </div>
 
         <div className="pdf-frame-wrap">
-          <iframe title={resume.name} src={resume.url} className="pdf-frame" />
+          <iframe title={resume.name} src={`${resume.url}#page=1&zoom=page-height`} className="pdf-frame" />
         </div>
 
         <div className="modal-footer">

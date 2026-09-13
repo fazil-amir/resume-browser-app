@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { api } from "./api/api.js";
-import Header from "./components/Header.jsx";
-import SearchBar from "./components/SearchBar.jsx";
-import FolderList from "./components/FolderList.jsx";
-import FavoriteSection from "./components/FavoriteSection.jsx";
-import LastPreviewSection from "./components/LastPreviewSection.jsx";
-import ResumeList from "./components/ResumeList.jsx";
-import ResumePreviewModal from "./components/ResumePreviewModal.jsx";
-import DeleteConfirmModal from "./components/DeleteConfirmModal.jsx";
-import EmptyState from "./components/EmptyState.jsx";
+import Header from "./components/header.jsx";
+import SearchBar from "./components/search-bar.jsx";
+import FolderList from "./components/folder-list.jsx";
+import FavoriteSection from "./components/favorite-section.jsx";
+import LastPreviewSection from "./components/last-preview-section.jsx";
+import ResumeList from "./components/resume-list.jsx";
+import ResumePreviewModal from "./components/resume-preview-modal.jsx";
+import DeleteConfirmModal from "./components/delete-confirm-modal.jsx";
+import EmptyState from "./components/empty-state.jsx";
 
 function App() {
   const [folders, setFolders] = useState([]);
@@ -144,7 +144,7 @@ function App() {
         {loading ? (
           <div className="loading">Loading resumes…</div>
         ) : displayedSearch ? (
-          <section>
+          <section className="home-section">
             <div className="section-heading">
               <div>
                 <h2>Search results</h2>
@@ -161,7 +161,7 @@ function App() {
             {!searchResults.length && <EmptyState title="No resumes found" text={`Nothing matched “${search}”.`} />}
           </section>
         ) : folderPath !== null ? (
-          <section>
+          <section className="home-section">
             <button className="back-link" onClick={backHome}>← All folders</button>
             <div className="section-heading">
               <div>

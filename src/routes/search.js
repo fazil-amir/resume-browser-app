@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllResumes, searchResumes } from "../services/fileService.js";
+import { getAllResumes, searchResumes } from "../services/file-service.js";
 
 const router = Router();
 

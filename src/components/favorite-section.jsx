@@ -1,4 +1,4 @@
-import ResumeList from "./ResumeList.jsx";
+import ResumeList from "./resume-list.jsx";
 
 export default function FavoriteSection({ resumes, favorites, onPreview, onToggleFavorite, onDelete }) {
   return (

@@ -1,6 +1,6 @@
 export default function FolderList({ folders, onSelect }) {
   return (
-    <section>
+    <section className="home-section">
       <div className="section-heading">
         <div>
           <h2>Folders</h2>
