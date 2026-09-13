@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.DS_Store
+resumes/
+
+# User-specific app state. The server creates these with empty arrays on startup.
+data/*.json
+data/*.tmp
+!data/.gitkeep
