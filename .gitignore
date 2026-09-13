@@ -2,7 +2,9 @@ node_modules/
 dist/
 .env
 .DS_Store
-resumes/
+# Keep the empty resumes directory, but never commit its locally added PDFs.
+resumes/*
+!resumes/.gitkeep
 
 # User-specific app state. The server creates these with empty arrays on startup.
 data/*.json
