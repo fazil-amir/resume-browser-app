@@ -1,0 +1,15 @@
+services:
+  resume-browser:
+    build: .
+    image: fazilamir/resume-browser:latest
+    container_name: resume-browser
+    ports:
+      - "4040:4040"
+    environment:
+      NODE_ENV: production
+      PORT: 4040
+      RESUME_ROOT: /app/resumes
+    volumes:
+      - ./resumes:/app/resumes:rw
+      - ./data:/app/data:rw
+    restart: unless-stopped

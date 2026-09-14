@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "node src/server.js",
     "build": "vite build",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "docker:build": "docker build -t fazilamir/resume-browser:latest .",
+    "docker:run": "docker rm -f resume-browser 2>/dev/null || true && docker run -d --name resume-browser -p 4040:4040 -e NODE_ENV=production -e PORT=4040 -e RESUME_ROOT=/app/resumes -v \"$PWD/resumes:/app/resumes\" -v \"$PWD/data:/app/data\" --restart unless-stopped fazilamir/resume-browser:latest",
+    "docker:push": "docker buildx build --platform linux/amd64,linux/arm64 -t fazilamir/resume-browser:latest --push ."
   },
   "dependencies": {
     "express": "^5.1.0",

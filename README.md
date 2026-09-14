@@ -102,6 +102,38 @@ The production server serves the compiled `dist/` directory and the resume files
 
 For a long-running deployment, run the process under a service manager such as `systemd`, Docker, or a process supervisor. Put authentication and HTTPS in front of the application before exposing it beyond a trusted local network. The application has destructive delete functionality and does not provide user authentication by itself.
 
+### Docker on ZimaOS
+
+This repository includes `Dockerfile`, `docker-compose.yml`, and `.dockerignore` for a production container. The Compose service persists both resume files and application state on the host:
+
+- `./resumes` is mounted at `/app/resumes`.
+- `./data` is mounted at `/app/data`.
+
+From the repository directory on the ZimaOS server:
+
+```bash
+docker compose up -d --build
+docker compose ps
+curl http://127.0.0.1:4040/api/health
+```
+
+Open `http://<ZIMAOS-IP>:4040` in a browser. In CasaOS/ZimaOS, the same Compose file can be added as a custom app; keep the two bind mounts and publish host port `4040` to container port `4040`.
+
+Resumes are added manually on the server. Copy PDFs into the repository's `resumes/` directory, preserving any category folders, then refresh the browser:
+
+```bash
+mkdir -p resumes/Frontend\ Engineer
+cp "/path/to/Jane Doe.pdf" "resumes/Frontend Engineer/"
+```
+
+Only `.pdf` files are shown. If the container cannot read or delete files from a host-mounted directory, adjust the host directory permissions for the Docker container before using the delete action in the UI.
+
+To update the app after a code change:
+
+```bash
+docker compose up -d --build
+```
+
 ## Configuration
 
 Configuration is supplied through environment variables:
