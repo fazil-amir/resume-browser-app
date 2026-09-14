@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { api } from "./api/api.js";
-import Header from "./components/header.jsx";
+import Header from "./components/header";
 import SearchBar from "./components/search-bar.jsx";
 import FolderList from "./components/folder-list.jsx";
 import FavoriteSection from "./components/favorite-section.jsx";

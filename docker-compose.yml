@@ -1,6 +1,5 @@
 services:
   resume-browser:
-    build: .
     image: fazilamir/resume-browser:latest
     container_name: resume-browser
     ports:
